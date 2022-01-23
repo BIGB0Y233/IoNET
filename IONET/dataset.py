@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import quaternion  #四元素，a+bi+cj+dk
 import scipy.interpolate#插值
-
 from tensorflow.keras.utils import Sequence#model.fit()传入训练数据数据，fit()接收多种类型的数据
 
 
@@ -43,7 +42,7 @@ def load_dataset_6d_quat(gyro_data, acc_data, pos_data, ori_data, window_size=20
         #x.append(gyro_acc_data[idx + 1 : idx + 1 + window_size, :])
         x_gyro.append(gyro_data[idx + 1 : idx + 1 + window_size, :])#获取x轴g，数据长度为窗大小
         x_acc.append(acc_data[idx + 1 : idx + 1 + window_size, :])#获取x轴加速度，数据长度为窗大小
-
+        
         p_a = pos_data[idx + window_size//2 - stride//2, :]#位置a
         p_b = pos_data[idx + window_size//2 + stride//2, :]#位置b
 

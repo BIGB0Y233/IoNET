@@ -38,7 +38,7 @@ def load_dataset_6d_quat(gyro_data, acc_data, pos_data, ori_data, window_size=20
     y_delta_q = []＃变化的
 
     print(gyro_data.shape[0],pos_data.shape)
-    for idx in range(0, gyro_data.shape[0] - window_size - 1, stride):#shape[0]表示垂直大小
+    for idx in range(0, gyro_data.shape[0] - window_size - 1, stride):#遍历整个数据，shape[0]表示垂直大小
         #x.append(gyro_acc_data[idx + 1 : idx + 1 + window_size, :])
         x_gyro.append(gyro_data[idx + 1 : idx + 1 + window_size, :])#获取x轴g，数据长度为窗大小
         x_acc.append(acc_data[idx + 1 : idx + 1 + window_size, :])#获取x轴加速度，数据长度为窗大小
